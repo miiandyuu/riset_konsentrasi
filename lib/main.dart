@@ -1,10 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/get_navigation.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:riset_konsentrasi/controllers/menu_controller.dart';
 import 'package:riset_konsentrasi/layout.dart';
 
 void main() {
+  Get.put(MenuController());
   runApp(MyApp());
 }
 
