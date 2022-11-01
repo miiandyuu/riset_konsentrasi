@@ -9,6 +9,7 @@ koordinat = {
         "y": "2"
     }
 }
+# TODO: make output into a .json format
 
 def countDown(t):
     while t:
@@ -29,7 +30,7 @@ def countDown(t):
         print(koordinat)
         
     print('Recording data success!')
-    print(koordinat)
+    # print(koordinat)
     
 t = input("Enter the time in seconds: ")
   
