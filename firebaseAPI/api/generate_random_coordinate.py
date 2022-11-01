@@ -29,7 +29,7 @@ def countDown(t):
         print(koordinat)
         
     print('Recording data success!')
-    print(koordinat)
+    # print(koordinat)
     
 t = input("Enter the time in seconds: ")
   
