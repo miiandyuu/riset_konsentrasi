@@ -14,3 +14,13 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+### Steps
+## Setting Firebase REST API
+Install Firebase CLI https://firebase.google.com/docs/cli#windows-npm
+run firebase init on your project dir
+select features you want to use then press Enter
+determine flie for rules and indexes (just press enter for default)
+
+pip install firebase_admin
+pip install flask
