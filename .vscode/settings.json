@@ -1,0 +1,65 @@
+{
+    "python.analysis.typeCheckingMode": "basic",
+    "todo-tree.highlights.defaultHighlight": {
+        "icon": "alert",
+        "type": "text-and-comment",
+        "foreground": "#040404",
+        "background": "#f9f9f9",
+        "opacity": 50,
+        "iconColour": "#9366fb",
+        "gutterIcon": true,
+    },
+    "todo-tree.highlights.customHighlight": {
+        "TODO": {
+            "icon": "check",
+            "foreground": "#ffffff",
+            "background": "#98A8F8",
+            "iconColour": "#98A8F8",
+        },
+        "NOTE": {
+            "icon": "note",
+            "foreground": "#f8f8f8",
+            "background": "#B8E8FC",
+            "iconColour": "#B8E8FC",
+        },
+        "COMMENT": {
+            "icon": "note",
+            "foreground": "#f8f8f8",
+            "background": "#f86ba8",
+            "iconColour": "#f86ba8",
+        },
+        "FIXME": {
+            "foreground": "#ffffff",
+            "background": "#fdfd5c",
+            "iconColour": "#fdfd5c",
+        },
+        "BUG": {
+            "foreground": "#ffffff",
+            "background": "#fe5f5f",
+            "iconColour": "#fe5f5f",
+        },
+        "[ ]": {
+            "icon": "check",
+            "foreground": "#ffffff",
+            "background": "#f7ca7e",
+            "iconColour": "#f7ca7e",
+        },
+        "[v]": {
+            "icon": "check",
+            "foreground": "#f8f8f8",
+            "background": "#8bfc78",
+            "iconColour": "#8bfc78",
+        }
+    },
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "NOTE",
+        "COMMENT",
+        "[ ]",
+        "[v]"
+    ],
+    "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS).*(\\n\\s*//\\s{2,}.*)*",
+}
