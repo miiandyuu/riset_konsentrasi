@@ -3,7 +3,7 @@ from flask import Blueprint, request, jsonify
 from firebase_admin import firestore
 
 db = firestore.client()
-user_Ref = db.collection('user1')
+user_Ref = db.collection('userTest')
 
 userAPI = Blueprint('userAPI', __name__)
 

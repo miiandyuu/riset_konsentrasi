@@ -29,17 +29,17 @@ class VerticalMenuItem extends StatelessWidget {
               Visibility(
                 visible: menuController.isHovering(itemName) ||
                     menuController.isActive(itemName),
-                child: Container(width: 3, height: 72, color: dark),
                 maintainSize: true,
                 maintainState: true,
                 maintainAnimation: true,
+                child: Container(width: 3, height: 72, color: dark),
               ),
               Expanded(
                   child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Padding(
-                    padding: EdgeInsets.all(16),
+                    padding: const EdgeInsets.all(16),
                     child: menuController.returnIconFor(itemName),
                   ),
                   if (!menuController.isActive(itemName))

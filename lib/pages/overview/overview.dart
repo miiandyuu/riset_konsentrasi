@@ -5,6 +5,7 @@ import 'package:riset_konsentrasi/helpers/responsiveness.dart';
 import 'package:riset_konsentrasi/pages/overview/widgets/overview_cards_large.dart';
 import 'package:riset_konsentrasi/pages/overview/widgets/overview_cards_medium.dart';
 import 'package:riset_konsentrasi/pages/overview/widgets/overview_cards_small.dart';
+import 'package:riset_konsentrasi/pages/overview/widgets/scatter_chart.dart';
 import 'package:riset_konsentrasi/widgets/custom_text.dart';
 
 class OverviewPage extends StatelessWidget {
@@ -35,11 +36,15 @@ class OverviewPage extends StatelessWidget {
             if (ResponsiveWidget.isLargeScreen(context) ||
                 ResponsiveWidget.isMediumScreen(context))
               if (ResponsiveWidget.isCustomScreen(context))
-                OverviewCardsMedium()
+                const OverviewCardsMedium()
               else
-              OverviewCardsLarge()
+                const OverviewCardsLarge()
             else
-            OverviewCardsSmall()
+              const OverviewCardsSmall(),
+            const SizedBox(
+              height: 24,
+            ),
+            TestChart(),
           ],
         ))
       ],

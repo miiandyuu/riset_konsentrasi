@@ -9,7 +9,7 @@ import 'package:riset_konsentrasi/layout.dart';
 void main() {
   Get.put(MenuController());
   Get.put(NavigationController());
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: light,
           textTheme: GoogleFonts.mulishTextTheme(Theme.of(context).textTheme)
               .apply(bodyColor: Colors.black),
-          pageTransitionsTheme: PageTransitionsTheme(builders: {
+          pageTransitionsTheme: const PageTransitionsTheme(builders: {
             TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
             TargetPlatform.android: FadeUpwardsPageTransitionsBuilder()
           }),

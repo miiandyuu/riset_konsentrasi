@@ -9,7 +9,7 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
           ? Row(
               children: [
                 Container(
-                  padding: EdgeInsets.only(left: 14),
+                  padding: const EdgeInsets.only(left: 14),
                   child: Image.asset(
                     "assets/logoUNS.png",
                     width: 28,
@@ -21,11 +21,11 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
               onPressed: () {
                 key.currentState!.openDrawer();
               },
-              icon: Icon(Icons.menu)),
+              icon: const Icon(Icons.menu)),
       elevation: 0,
       title: Row(
         children: [
-          Visibility(
+          const Visibility(
               child: CustomText(
             text: "Dash",
             color: lightGrey,
@@ -66,23 +66,23 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
             height: 22,
             color: lightGrey,
           ),
-          SizedBox(
+          const SizedBox(
             width: 24,
           ),
-          CustomText(
+          const CustomText(
             text: "Ricky Aston",
             color: lightGrey,
           ),
-          SizedBox(
+          const SizedBox(
             width: 16,
           ),
           Container(
             decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(30)),
             child: Container(
-              padding: EdgeInsets.all(2),
-              margin: EdgeInsets.all(2),
-              child: CircleAvatar(
+              padding: const EdgeInsets.all(2),
+              margin: const EdgeInsets.all(2),
+              child: const CircleAvatar(
                 backgroundColor: light,
                 child: Icon(
                   Icons.person_outline,
@@ -93,6 +93,6 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
           )
         ],
       ),
-      iconTheme: IconThemeData(color: dark),
+      iconTheme: const IconThemeData(color: dark),
       backgroundColor: Colors.transparent,
     );

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:riset_konsentrasi/pages/overview/widgets/info_card.dart';
 import 'package:riset_konsentrasi/pages/overview/widgets/info_card_small.dart';
 
 class OverviewCardsSmall extends StatelessWidget {
@@ -7,8 +6,7 @@ class OverviewCardsSmall extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double _width = MediaQuery.of(context).size.width;
-    return Container(
+    return SizedBox(
       height: 400,
       child: Column(
         children: [
@@ -18,7 +16,7 @@ class OverviewCardsSmall extends StatelessWidget {
             onTap: () {},
             isActive: true,
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           InfoCardSmall(
@@ -27,7 +25,7 @@ class OverviewCardsSmall extends StatelessWidget {
             onTap: () {},
             isActive: true,
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           InfoCardSmall(
@@ -36,7 +34,7 @@ class OverviewCardsSmall extends StatelessWidget {
             onTap: () {},
             isActive: true,
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           InfoCardSmall(
