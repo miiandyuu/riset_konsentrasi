@@ -3,7 +3,8 @@ from flask import Blueprint, request, jsonify
 from firebase_admin import firestore
 
 db = firestore.client()
-user_Ref = db.collection('userTest')
+user_Ref = db.collection('user')
+# .document('Gambar1')
 
 userAPI = Blueprint('userAPI', __name__)
 
@@ -19,7 +20,16 @@ def create():
 @userAPI.route('/list')
 def read():
     try:
-        all_coordinate = [doc.to_dict() for doc in user_Ref.stream()]
+        all_coordinate = [doc.to_dict() for doc in user_Ref.get()]
         return jsonify(all_coordinate), 200
     except Exception as e:
         return f"An Error Occured: {e}"
+
+# @userAPI.route('/testD')
+# def readD():
+#     try:
+#         doc = user_Ref.get()
+#         if doc.exists:
+#             return jsonify(doc.to_dict())
+#     except Exception as e:
+#         return f"An Error Occured: {e}"
