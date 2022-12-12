@@ -36,7 +36,7 @@ class RecentTestTable extends StatelessWidget {
                   border: Border.all(color: primary, width: .5),
                   color: light,
                   borderRadius: BorderRadius.circular(20)),
-              padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
               child: CustomText(
                 text: "Test Selesai",
                 color: primary.withOpacity(.7),
