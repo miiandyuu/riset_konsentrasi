@@ -27,7 +27,7 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
         children: [
           const Visibility(
               child: CustomText(
-            text: "Dash",
+            text: "Riset Konsentrasi",
             color: lightGrey,
             size: 20,
             fontWeight: FontWeight.bold,
@@ -67,7 +67,7 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
             color: lightGrey,
           ),
           const SizedBox(
-            width: 24,
+            width: 16,
           ),
           const CustomText(
             text: "Ricky Aston",

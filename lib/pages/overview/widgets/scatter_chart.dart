@@ -43,7 +43,7 @@ class TestChartState extends State<TestChart> {
     for (var i = 0; i < 40; i++) {
       data = [];
     }
-    
+
     _tooltip = TooltipBehavior(enable: true);
     super.initState();
   }
@@ -72,15 +72,15 @@ class TestChartState extends State<TestChart> {
 
   randomXNum() {
     var random = Random();
-    for (var i = 0; i < 30; i++) {
-      return random.nextDouble() * 30;
+    for (var i = 0; i < 40; i++) {
+      return random.nextDouble() * 40;
     }
   }
 
   randomYNum() {
     var random = Random();
-    for (var i = 0; i < 30; i++) {
-      return random.nextDouble() * 30;
+    for (var i = 0; i < 40; i++) {
+      return random.nextDouble() * 40;
     }
   }
 }

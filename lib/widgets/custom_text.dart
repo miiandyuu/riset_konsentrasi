@@ -16,7 +16,8 @@ class CustomText extends StatelessWidget {
       style: TextStyle(
           fontSize: size ?? 16,
           color: color ?? Colors.black,
-          fontWeight: fontWeight ?? FontWeight.normal),
+          fontWeight: fontWeight ?? FontWeight.normal,
+          overflow: TextOverflow.fade),
     );
   }
 }
