@@ -93,12 +93,6 @@ class AuthenticationPage extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 15),
-            ElevatedButton(
-                onPressed: () {},
-                child: CustomText(
-                  text: "Login",
-                  color: Colors.white,
-                )),
             InkWell(
               onTap: () {
                 Get.offAllNamed(RootRoute);
