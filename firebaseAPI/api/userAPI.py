@@ -1,10 +1,10 @@
 import uuid
 from flask import Blueprint, request, jsonify
 from firebase_admin import firestore
+import random
 
 db = firestore.client()
 user_Ref = db.collection('user')
-# .document('Gambar1')
 
 userAPI = Blueprint('userAPI', __name__)
 
@@ -25,11 +25,47 @@ def read():
     except Exception as e:
         return f"An Error Occured: {e}"
 
-# @userAPI.route('/testD')
-# def readD():
-#     try:
-#         doc = user_Ref.get()
-#         if doc.exists:
-#             return jsonify(doc.to_dict())
-#     except Exception as e:
-#         return f"An Error Occured: {e}"
+
+
+
+
+
+
+@userAPI.route('/test', methods=['POST'])
+def test():
+    try:
+        i = 1
+        listTest = []
+        while i < 30:
+            listTest.append(str(random.randrange(30)))
+            i += 1
+
+        x = []
+        y = []
+        count = 0
+        for i in listTest:
+            if count % 2 == 1:
+                y = listTest[1::2]
+            else: x = listTest[0::2]
+            count += 1
+
+        checkKoordinat = list(zip(x, y))
+
+        saveKoordinat = {}
+
+        for index, item in enumerate(checkKoordinat):
+            x = item[0]
+            y = item[1]
+                
+            saveKoordinat = {
+                    str(index) : {
+                        f'x{index}' : str(x),
+                        f'y{index}' : str(y)
+                    }
+                }
+
+        db.collection('user').document('Gambar1').set(saveKoordinat)
+        return jsonify({"success": True}), 200
+    except Exception as e:
+        return f"An Error Occured: {e}"
+
