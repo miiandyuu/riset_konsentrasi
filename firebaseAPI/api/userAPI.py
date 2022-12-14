@@ -4,7 +4,7 @@ from firebase_admin import firestore
 import random
 
 db = firestore.client()
-user_Ref = db.collection('user')
+user_Ref = db.collection('userTest')
 
 userAPI = Blueprint('userAPI', __name__)
 
@@ -26,19 +26,14 @@ def read():
         return f"An Error Occured: {e}"
 
 
-
-
-
-
-
 @userAPI.route('/test', methods=['POST'])
 def test():
     try:
-        i = 1
         listTest = []
-        while i < 30:
+        t = 60
+        while t:
             listTest.append(str(random.randrange(30)))
-            i += 1
+            t -= 1
 
         x = []
         y = []
@@ -52,19 +47,19 @@ def test():
         checkKoordinat = list(zip(x, y))
 
         saveKoordinat = {}
-
+        final = {}
         for index, item in enumerate(checkKoordinat):
             x = item[0]
             y = item[1]
                 
             saveKoordinat = {
-                    str(index) : {
-                        f'x{index}' : str(x),
-                        f'y{index}' : str(y)
+                    f'{index}' : {
+                        'x' : x,
+                        'y' : y
                     }
                 }
-
-        db.collection('user').document('Gambar1').set(saveKoordinat)
+            final = final | saveKoordinat
+        user_Ref.document('cobaRandomKoordinat').set(final)
         return jsonify({"success": True}), 200
     except Exception as e:
         return f"An Error Occured: {e}"

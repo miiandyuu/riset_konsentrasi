@@ -1,12 +1,14 @@
 # TODO:: Simpan data dari VR
 import random
+import time
 
 i = 1
 listTest = []
-while i < 30:
+t=60
+while t:
     listTest.append(str(random.randrange(30)))
-    i += 1
-print(listTest)
+    t -= 1
+# print(listTest)
 
 
 x = []
@@ -19,10 +21,10 @@ for i in listTest:
     count += 1
 
 checkKoordinat = list(zip(x, y))
-print(checkKoordinat)
+# print(checkKoordinat)
 
 saveKoordinat = {}
-
+final = {}
 for index, item in enumerate(checkKoordinat):
     x = item[0]
     y = item[1]
@@ -33,16 +35,16 @@ for index, item in enumerate(checkKoordinat):
                 'y' : y
             }
         }
-    print(saveKoordinat)
-
-
+    # print(saveKoordinat)
+    final = final | saveKoordinat
+print(final)
 
 
 # TODO:: Kirim data dari VR to API
-from firebase_admin import firestore
-db = firestore.client()
-user_Ref = db.collection('user')
-db.collection('user').document('Gambar1').set(saveKoordinat)
+# from firebase_admin import firestore
+# db = firestore.client()
+# user_Ref = db.collection('user')
+# db.collection('user').document('Gambar1').set(saveKoordinat)
 
 # TODO:: Get from API
 
