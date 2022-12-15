@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:riset_konsentrasi/constants/style.dart';
-import 'package:riset_konsentrasi/routing/app_route.dart';
-import 'package:riset_konsentrasi/routing/app_route_name.dart';
+import 'package:riset_konsentrasi/pages/404/not_found_page.dart';
+import 'package:riset_konsentrasi/pages/authetication/login/login_screen.dart';
+import 'package:riset_konsentrasi/pages/authetication/signup/signup_screen.dart';
 
 import 'constants/cubit/theme_cubit.dart';
 
 void main() {
-  // Get.put(MenuController());
-  // Get.put(NavigationController());
   MainModule.init();
   runApp(const MyApp());
 }
@@ -28,14 +28,30 @@ class MyApp extends StatelessWidget {
       child: Builder(
         builder: (context) {
           final themeMode = context.watch<ThemeCubit>().state.themeMode;
-          return MaterialApp(
+          return GetMaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'Riset Konsentrasi',
             theme: AppTheme.light,
             darkTheme: AppTheme.dark,
             themeMode: themeMode,
-            initialRoute: AppRouteName.login,
-            onGenerateRoute: AppRoute.generate,
+            home: const LoginScreen(), //TODO:: Change into Landing Page
+            // onUnknownRoute: (settings) {
+            //   GetPage(
+            //     name: '/not-found',
+            //     page: () => const PageNotFound(),
+            //   );
+            // },
+            getPages: [
+              GetPage(
+                name: '/signup',
+                page: () => const SignupScreen(),
+              ),
+              GetPage(
+                name: '/login',
+                page: () => const LoginScreen(),
+              )
+            ],
+
             builder: (context, child) {
               return ResponsiveWrapper.builder(child,
                   defaultScale: true,

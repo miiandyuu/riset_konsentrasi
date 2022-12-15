@@ -10,7 +10,7 @@ class PageNotFound extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset("assets/images/not_found.svg", width: 360),
+          Image.asset("assets/images/not_found.png", width: 360),
           const SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
