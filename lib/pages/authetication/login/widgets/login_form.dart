@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:riset_konsentrasi/helpers/responsive_screen.dart';
@@ -9,7 +10,12 @@ class LoginForm extends StatefulWidget {
   State<LoginForm> createState() => _LoginFormState();
 }
 
+final _auth = FirebaseAuth.instance;
+
 class _LoginFormState extends State<LoginForm> {
+  String email = '';
+  String password = '';
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -34,6 +40,10 @@ class _LoginFormState extends State<LoginForm> {
               textAlign: TextAlign.center),
           const SizedBox(height: 32),
           TextField(
+              keyboardType: TextInputType.emailAddress,
+              onChanged: (value) {
+                email = value;
+              },
               decoration: InputDecoration(
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8)),
@@ -42,6 +52,9 @@ class _LoginFormState extends State<LoginForm> {
               style: Theme.of(context).textTheme.bodyMedium),
           const SizedBox(height: 16),
           TextField(
+              onChanged: (value) {
+                password = value;
+              },
               decoration: InputDecoration(
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8)),
@@ -68,8 +81,16 @@ class _LoginFormState extends State<LoginForm> {
               width: MediaQuery.of(context).size.width,
               height: 48,
               child: ElevatedButton(
-                  onPressed: () {
-                    //TODO:: Login feature with email && go to dashboard
+                  onPressed: () async {
+                    try {
+                      final user = await _auth.signInWithEmailAndPassword(
+                          email: email, password: password);
+                      if (user != null) {
+                        Get.toNamed("/dashboard");
+                      }
+                    } catch (e) {
+                      print(e);
+                    }
                   },
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(

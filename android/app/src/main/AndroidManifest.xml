@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.riset_konsentrasi">
+    package="com.teuns.riset_konsentrasi">
    <application
         android:label="riset_konsentrasi"
         android:name="${applicationName}"

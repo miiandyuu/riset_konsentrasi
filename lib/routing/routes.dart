@@ -1,29 +1,27 @@
-// ignore_for_file: constant_identifier_names
+// const rootRoute = "/";
 
-const RootRoute = "/";
+// const overViewPageDisplayName = "Overview";
+// const overViewPageRoute = "/overview";
 
-const OverViewPageDisplayName = "Overview";
-const OverViewPageRoute = "/overview";
+// const testPageDisplayName = "Test";
+// const testPageRoute = "/test";
 
-const TestPageDisplayName = "Test";
-const TestPageRoute = "/test";
+// const recordsPageDisplayName = "Records";
+// const recordsPageRoute = "/records";
 
-const RecordsPageDisplayName = "Records";
-const RecordsPageRoute = "/records";
+// const authenticationPageDisplayName = "Log Out";
+// const authenticationPageRoute = "/auth";
 
-const AuthenticationPageDisplayName = "Log Out";
-const AuthenticationPageRoute = "/auth";
+// class MenuItem {
+//   final String name;
+//   final String route;
 
-class MenuItem {
-  final String name;
-  final String route;
+//   MenuItem(this.name, this.route);
+// }
 
-  MenuItem(this.name, this.route);
-}
-
-List<MenuItem> sideMenuItems = [
-  MenuItem(OverViewPageDisplayName, OverViewPageRoute),
-  MenuItem(TestPageDisplayName, TestPageRoute),
-  MenuItem(RecordsPageDisplayName, RecordsPageRoute),
-  MenuItem(AuthenticationPageDisplayName, AuthenticationPageRoute)
-];
+// List<MenuItem> sideMenuItems = [
+//   MenuItem(overViewPageDisplayName, overViewPageRoute),
+//   MenuItem(testPageDisplayName, testPageRoute),
+//   MenuItem(recordsPageDisplayName, recordsPageRoute),
+//   MenuItem(authenticationPageDisplayName, authenticationPageRoute)
+// ];

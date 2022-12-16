@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,6 +12,10 @@ class SignupForm extends StatefulWidget {
 }
 
 class _SignupFormState extends State<SignupForm> {
+  final _auth = FirebaseAuth.instance;
+  String email = '';
+  String password = '';
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -35,6 +40,10 @@ class _SignupFormState extends State<SignupForm> {
               textAlign: TextAlign.center),
           const SizedBox(height: 32),
           TextField(
+              keyboardType: TextInputType.emailAddress,
+              onChanged: (value) {
+                email = value;
+              },
               decoration: InputDecoration(
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8)),
@@ -43,6 +52,9 @@ class _SignupFormState extends State<SignupForm> {
               style: Theme.of(context).textTheme.bodyMedium),
           const SizedBox(height: 16),
           TextField(
+              onChanged: (value) {
+                password = value;
+              },
               decoration: InputDecoration(
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8)),
@@ -50,21 +62,31 @@ class _SignupFormState extends State<SignupForm> {
                   suffixIcon: const Icon(Icons.lock)),
               obscureText: true,
               style: Theme.of(context).textTheme.bodyMedium),
-          const SizedBox(height: 16),
-          TextField(
-              decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8)),
-                  label: const Text("Confirm Password"),
-                  suffixIcon: const Icon(Icons.lock)),
-              obscureText: true,
-              style: Theme.of(context).textTheme.bodyMedium),
+          // const SizedBox(height: 16),
+          // TextField(
+          //     decoration: InputDecoration(
+          //         border: OutlineInputBorder(
+          //             borderRadius: BorderRadius.circular(8)),
+          //         label: const Text("Confirm Password"),
+          //         suffixIcon: const Icon(Icons.lock)),
+          //     obscureText: true,
+          //     style: Theme.of(context).textTheme.bodyMedium),
           const SizedBox(height: 32),
           SizedBox(
             width: MediaQuery.of(context).size.width,
             height: 48,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () async {
+                try {
+                  final newUser = await _auth.createUserWithEmailAndPassword(
+                      email: email, password: password);
+                  if (newUser != null) {
+                    Get.toNamed("/dashboard");
+                  }
+                } catch (e) {
+                  print(e);
+                }
+              },
               style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16),
