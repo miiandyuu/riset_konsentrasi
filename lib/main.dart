@@ -45,10 +45,12 @@ class MyApp extends StatelessWidget {
             theme: AppTheme.light,
             darkTheme: AppTheme.dark,
             themeMode: themeMode,
-            home: RepositoryProvider(
-              create: (context) => CoordinateRepository(),
-              child: const LandingScreen(),
-            ),
+            home: const LandingScreen(),
+            //TODO: Change repoProvider after login
+            // home: RepositoryProvider(
+            //   create: (context) => CoordinateRepository(),
+            //   child: const LandingScreen(),
+            // ),
             //TODO:: add 404 page
             // onUnknownRoute: (settings) {
             //   GetPage(
@@ -57,6 +59,10 @@ class MyApp extends StatelessWidget {
             //   );
             // },
             getPages: [
+              GetPage(
+                name: '/home',
+                page: () => const LandingScreen(),
+              ),
               GetPage(
                 name: '/signup',
                 page: () => const SignupScreen(),

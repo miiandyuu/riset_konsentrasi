@@ -31,6 +31,7 @@ environment:
 dependencies:
   blobs: ^2.0.0
   bubble: ^1.2.1
+  carousel_slider: ^4.2.1
   charts_flutter: ^0.12.0
   cloud_firestore: ^4.2.0
   cupertino_icons: ^1.0.2
@@ -51,6 +52,7 @@ dependencies:
   provider: ^6.0.4
   responsive_framework: ^0.2.0
   shared_preferences: ^2.0.15
+  smooth_page_indicator: ^1.0.0+2
   syncfusion_flutter_charts: ^20.3.56
 
 dev_dependencies:

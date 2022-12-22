@@ -50,7 +50,7 @@ class _PromotionImagesState extends State<PromotionImages> {
     return Container(
       decoration: BoxDecoration(
           gradient: LinearGradient(
-              colors: [AppColor.primaryColor, AppColor.priamryColorLight],
+              colors: [AppColor.primaryColor, AppColor.primaryColorLight],
               begin: Alignment.bottomLeft,
               end: Alignment.topRight)),
       child: ValueListenableBuilder(

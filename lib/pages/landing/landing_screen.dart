@@ -1,45 +1,74 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:riset_konsentrasi/firebase/firebase_testing_screen.dart';
-import 'package:riset_konsentrasi/firebase/get_data.dart';
+import 'package:riset_konsentrasi/constants/style.dart';
+import 'package:riset_konsentrasi/pages/landing/widgets/carousels.dart';
+import 'package:riset_konsentrasi/pages/landing/widgets/features_section.dart';
+import 'package:riset_konsentrasi/pages/landing/widgets/globals.dart';
+import 'package:riset_konsentrasi/pages/landing/widgets/header.dart';
+import 'package:riset_konsentrasi/pages/landing/widgets/product_section.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+    return Scaffold(
+      // key: Globals.scaffoldKey,
+      endDrawer: Drawer(
+        child: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
+            child: ListView.separated(
+                itemBuilder: (context, index) {
+                  return headerItems[index].isButton
+                      ? MouseRegion(
+                          cursor: SystemMouseCursors.click,
+                          child: Container(
+                            decoration: BoxDecoration(
+                                color: AppColor.primaryColor,
+                                borderRadius: BorderRadius.circular(8.0)),
+                            padding: EdgeInsets.symmetric(horizontal: 28.0),
+                            child: TextButton(
+                                onPressed: headerItems[index].onTap,
+                                child: Text(
+                                  headerItems[index].title,
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 13.0,
+                                      fontWeight: FontWeight.bold),
+                                )),
+                          ),
+                        )
+                      : ListTile(
+                          title: Text(
+                            headerItems[index].title,
+                            style: TextStyle(color: Colors.black),
+                          ),
+                        );
+                },
+                separatorBuilder: (context, index) {
+                  return SizedBox(
+                    height: 10,
+                  );
+                },
+                itemCount: headerItems.length),
+          ),
+        ),
+      ),
+      body: Container(
+        child: SingleChildScrollView(
+            child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ElevatedButton(
-                onPressed: () {
-                  Get.toNamed('/login');
-                },
-                child: Text("LOGIN")),
-            SizedBox(
-              height: 24,
+            Container(
+              child: Header(),
             ),
-            ElevatedButton(
-                onPressed: () {
-                  Get.toNamed('/signup');
-                },
-                child: Text("SIGNUP")),
-            SizedBox(
-              height: 24,
-            ),
-            // ElevatedButton(
-            //     onPressed: () {
-            //       Navigator.push(context, MaterialPageRoute(
-            //         builder: (context) {
-            //           return FirebaseTestingScreen();
-            //         },
-            //       ));
-            //       // GetUserName(documentId: 'cobaRandomKoordinat');
-            //     },
-            //     child: Text("test firebase")),
-          ]),
+            Carousel(),
+            SizedBox(height: 20.0),
+            FeaturesSection(),
+            ProductSection(),
+          ],
+        )),
+      ),
     );
   }
 }

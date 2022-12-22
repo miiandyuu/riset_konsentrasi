@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:riset_konsentrasi/constants/style.dart';
 import 'package:riset_konsentrasi/helpers/responsive_screen.dart';
 import 'package:riset_konsentrasi/pages/authetication/login/widgets/login_form.dart';
@@ -29,7 +30,7 @@ class LoginScreen extends StatelessWidget {
                       builder: (context, state) {
                     return IconButton(
                       onPressed: () {
-                        //TODO:: Go to Home Page
+                        Get.offNamed('/home');
                       },
                       icon: Icon(Icons.keyboard_arrow_left_rounded,
                           color: state.themeMode == ThemeMode.light

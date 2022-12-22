@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:riset_konsentrasi/pages/authetication/signup/widgets/signup_form.dart';
 
 import '../../../constants/cubit/theme_cubit.dart';
@@ -33,7 +34,7 @@ class SignupScreen extends StatelessWidget {
                       builder: (context, state) {
                     return IconButton(
                         onPressed: () {
-                          //TODO:: Go to Home Page
+                          Get.offNamed('/home');
                         },
                         icon: const Icon(Icons.keyboard_arrow_left_rounded));
                   }))),

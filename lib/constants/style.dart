@@ -4,8 +4,8 @@ const double defaultPadding = 16.0;
 
 class AppColor {
   static Color primaryColor = const Color(0xFF2A9DF4);
-  static Color priamryColorLight = const Color(0xFF72CEFF);
-  static Color priamryColorDark = const Color(0xFF006FC1);
+  static Color primaryColorLight = const Color(0xFF72CEFF);
+  static Color primaryColorDark = const Color(0xFF006FC1);
   // static Color secondaryColor = const Color(0xFFFAE591);
   static Color white = const Color(0xFFFFFFFF);
   static Color black = const Color(0xFF000000);
