@@ -11,15 +11,16 @@ class TestResultInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: RichText(
-        textAlign: TextAlign.center,
+          textAlign: TextAlign.center,
           text: TextSpan(children: [
-        TextSpan(
-            text: "$title \n\n",
-            style: const TextStyle(color: lightGrey, fontSize: 16)),
-        TextSpan(
-            text: "\$ $amount ",
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 24)),
-      ])),
+            TextSpan(
+                text: "$title \n\n",
+                style: TextStyle(color: AppColor.backgroundGray, fontSize: 16)),
+            TextSpan(
+                text: "\$ $amount ",
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 24)),
+          ])),
     );
   }
 }

@@ -22,7 +22,7 @@ class HorizontalMenuItem extends StatelessWidget {
       },
       child: Obx(() => Container(
             color: menuController.isHovering(itemName)
-                ? lightGrey.withOpacity(.1)
+                ? AppColor.backgroundGray.withOpacity(.1)
                 : Colors.transparent,
             child: Row(children: [
               Visibility(
@@ -31,7 +31,8 @@ class HorizontalMenuItem extends StatelessWidget {
                 maintainSize: true,
                 maintainState: true,
                 maintainAnimation: true,
-                child: Container(width: 6, height: 40, color: dark),
+                child: Container(
+                    width: 6, height: 40, color: AppColor.backgroundBlack),
               ),
               SizedBox(width: width / 80),
               Padding(
@@ -42,13 +43,15 @@ class HorizontalMenuItem extends StatelessWidget {
                 Flexible(
                     child: CustomText(
                   text: itemName,
-                  color: menuController.isHovering(itemName) ? dark : lightGrey,
+                  color: menuController.isHovering(itemName)
+                      ? AppColor.backgroundBlack
+                      : AppColor.backgroundGray,
                 ))
               else
                 Flexible(
                     child: CustomText(
                   text: itemName,
-                  color: dark,
+                  color: AppColor.backgroundBlack,
                   size: 18,
                   fontWeight: FontWeight.bold,
                 ))

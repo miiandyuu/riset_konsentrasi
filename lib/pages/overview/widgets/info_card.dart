@@ -29,7 +29,7 @@ class InfoCard extends StatelessWidget {
               boxShadow: [
                 BoxShadow(
                     offset: const Offset(0, 6),
-                    color: lightGrey.withOpacity(.1),
+                    color: AppColor.backgroundGray.withOpacity(.1),
                     blurRadius: 12)
               ],
               borderRadius: BorderRadius.circular(8)),
@@ -39,7 +39,7 @@ class InfoCard extends StatelessWidget {
                 children: [
                   Expanded(
                       child: Container(
-                    color: topColor ?? primary,
+                    color: topColor ?? AppColor.primaryColor,
                     height: 5,
                   ))
                 ],
@@ -52,11 +52,16 @@ class InfoCard extends StatelessWidget {
                         text: "$title\n",
                         style: TextStyle(
                             fontSize: 16,
-                            color: isActive! ? primary : lightGrey)),
+                            color: isActive!
+                                ? AppColor.primaryColor
+                                : AppColor.backgroundGray)),
                     TextSpan(
                         text: "$value",
                         style: TextStyle(
-                            fontSize: 40, color: isActive! ? primary : dark))
+                            fontSize: 40,
+                            color: isActive!
+                                ? AppColor.primaryColor
+                                : AppColor.backgroundBlack))
                   ])),
               Expanded(child: Container())
             ],

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>716326662088-ghahvqkpnqg3jcijn9tinehef8d7nb2n.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.716326662088-ghahvqkpnqg3jcijn9tinehef8d7nb2n</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAcUP9R6qKEv2fZfEtuJ0Dc884m9uql7Hc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>716326662088</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.risetKonsentrasi</string>
+	<key>PROJECT_ID</key>
+	<string>testing-projek-8349e</string>
+	<key>STORAGE_BUCKET</key>
+	<string>testing-projek-8349e.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:716326662088:ios:1fd1e493d4aa7c3a219afd</string>
+	<key>DATABASE_URL</key>
+	<string>https://testing-projek-8349e-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>

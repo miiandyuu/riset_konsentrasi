@@ -16,10 +16,10 @@ class RecentTestTable extends StatelessWidget {
           boxShadow: [
             BoxShadow(
                 offset: const Offset(0, 6),
-                color: lightGrey.withOpacity(.1),
+                color: AppColor.backgroundGray.withOpacity(.1),
                 blurRadius: 12)
           ],
-          border: Border.all(color: lightGrey, width: .5)),
+          border: Border.all(color: AppColor.backgroundGray, width: .5)),
       child: DataTable(columns: const [
         DataColumn(label: Text("Nama Pasien")),
         DataColumn(label: Text("Nama Penguji")),
@@ -33,13 +33,13 @@ class RecentTestTable extends StatelessWidget {
             DataCell(Text("Hayyan Yusuf")),
             DataCell(Container(
               decoration: BoxDecoration(
-                  border: Border.all(color: primary, width: .5),
-                  color: light,
+                  border: Border.all(color: AppColor.primaryColor, width: .5),
+                  color: AppColor.white,
                   borderRadius: BorderRadius.circular(20)),
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
               child: CustomText(
                 text: "Test Selesai",
-                color: primary.withOpacity(.7),
+                color: AppColor.primaryColor.withOpacity(.7),
                 fontWeight: FontWeight.bold,
               ),
             )),

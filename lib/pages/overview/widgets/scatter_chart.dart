@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class TestChart extends StatefulWidget {
-  // ignore: prefer_const_constructors_in_immutables
-  TestChart({Key? key}) : super(key: key);
+  const TestChart({Key? key}) : super(key: key);
 
   @override
   TestChartState createState() => TestChartState();

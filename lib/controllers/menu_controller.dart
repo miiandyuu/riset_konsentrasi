@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:riset_konsentrasi/constants/style.dart';
+import 'package:riset_konsentrasi/routing/app_route_name.dart';
 
 import '../routing/routes.dart';
 
 class MenuController extends GetxController {
   static MenuController instance = Get.find();
 
-  var activeItem = OverViewPageDisplayName.obs;
+  var activeItem = AppRouteName.overviewPageDisplayName.obs;
   var hoverItem = "".obs;
 
   changeActiveItemTo(String itemName) {
@@ -24,13 +25,13 @@ class MenuController extends GetxController {
 
   Widget returnIconFor(String itemName) {
     switch (itemName) {
-      case OverViewPageDisplayName:
+      case AppRouteName.overviewPageDisplayName:
         return _customIcon(Icons.dashboard, itemName);
-      case TestPageDisplayName:
+      case AppRouteName.testPageDisplayName:
         return _customIcon(Icons.receipt_long, itemName);
-      case RecordsPageDisplayName:
+      case AppRouteName.recordsPageDisplayName:
         return _customIcon(Icons.science, itemName);
-      case AuthenticationPageDisplayName:
+      case AppRouteName.logoutPageDisplayName:
         return _customIcon(Icons.exit_to_app, itemName);
       default:
         return _customIcon(Icons.exit_to_app, itemName);
@@ -38,8 +39,13 @@ class MenuController extends GetxController {
   }
 
   Widget _customIcon(IconData icon, String itemName) {
-    if (isActive(itemName)) return Icon(icon, size: 22, color: dark);
+    if (isActive(itemName)) {
+      return Icon(icon, size: 22, color: AppColor.backgroundBlack);
+    }
 
-    return Icon(icon, color: isHovering(itemName) ? dark : lightGrey);
+    return Icon(icon,
+        color: isHovering(itemName)
+            ? AppColor.backgroundBlack
+            : AppColor.backgroundGray);
   }
 }

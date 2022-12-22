@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:riset_konsentrasi/constants/style.dart';
-import 'package:riset_konsentrasi/helpers/responsiveness.dart';
+// import 'package:riset_konsentrasi/helpers/responsiveness.dart';
 import 'package:riset_konsentrasi/widgets/custom_text.dart';
+
+import '../helpers/responsive_screen.dart';
 
 AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
     AppBar(
-      leading: !ResponsiveWidget.isSmallScreen(context)
+      leading: !Responsive.isMobile(context)
           ? Row(
               children: [
                 Container(
@@ -25,10 +27,10 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
       elevation: 0,
       title: Row(
         children: [
-          const Visibility(
+          Visibility(
               child: CustomText(
             text: "Riset Konsentrasi",
-            color: lightGrey,
+            color: AppColor.backgroundGray,
             size: 20,
             fontWeight: FontWeight.bold,
           )),
@@ -37,7 +39,7 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
               onPressed: () {},
               icon: Icon(
                 Icons.settings,
-                color: dark.withOpacity(.7),
+                color: AppColor.backgroundBlack.withOpacity(.7),
               )),
           Stack(
             children: [
@@ -45,7 +47,7 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
                   onPressed: () {},
                   icon: Icon(
                     Icons.notifications,
-                    color: dark.withOpacity(.7),
+                    color: AppColor.backgroundBlack.withOpacity(.7),
                   )),
               Positioned(
                   top: 7,
@@ -55,23 +57,23 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
                     height: 12,
                     padding: const EdgeInsets.all(4),
                     decoration: BoxDecoration(
-                        color: primary,
+                        color: AppColor.primaryColor,
                         borderRadius: BorderRadius.circular(30),
-                        border: Border.all(color: light, width: 2)),
+                        border: Border.all(color: AppColor.white, width: 2)),
                   ))
             ],
           ),
           Container(
             width: 1,
             height: 22,
-            color: lightGrey,
+            color: AppColor.backgroundGray,
           ),
           const SizedBox(
             width: 16,
           ),
-          const CustomText(
+          CustomText(
             text: "Ricky Aston",
-            color: lightGrey,
+            color: AppColor.backgroundGray,
           ),
           const SizedBox(
             width: 16,
@@ -82,17 +84,17 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
             child: Container(
               padding: const EdgeInsets.all(2),
               margin: const EdgeInsets.all(2),
-              child: const CircleAvatar(
-                backgroundColor: light,
+              child: CircleAvatar(
+                backgroundColor: AppColor.white,
                 child: Icon(
                   Icons.person_outline,
-                  color: dark,
+                  color: AppColor.backgroundBlack,
                 ),
               ),
             ),
           )
         ],
       ),
-      iconTheme: const IconThemeData(color: dark),
+      iconTheme: IconThemeData(color: AppColor.backgroundBlack),
       backgroundColor: Colors.transparent,
     );

@@ -19,21 +19,21 @@ class TestResultInfoSectionSmall extends StatelessWidget {
           boxShadow: [
             BoxShadow(
                 offset: const Offset(0, 6),
-                color: lightGrey.withOpacity(.1),
+                color: AppColor.backgroundGray.withOpacity(.1),
                 blurRadius: 12)
           ],
-          border: Border.all(color: lightGrey, width: .5)),
+          border: Border.all(color: AppColor.backgroundGray, width: .5)),
       child: Column(
         children: [
           SizedBox(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                const CustomText(
+                CustomText(
                     text: "Test Result Chart",
                     size: 20,
                     fontWeight: FontWeight.bold,
-                    color: lightGrey),
+                    color: AppColor.backgroundGray),
                 TestChart()
               ],
             ),

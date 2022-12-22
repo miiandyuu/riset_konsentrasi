@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:riset_konsentrasi/pages/records/widgets/records_table.dart';
 
 import '../../constants/controllers.dart';
-import '../../helpers/responsiveness.dart';
+import '../../helpers/responsive_screen.dart';
 import '../../widgets/custom_text.dart';
 
 class RecordsPage extends StatelessWidget {
@@ -16,17 +17,22 @@ class RecordsPage extends StatelessWidget {
           () => Row(
             children: [
               Container(
-                margin: EdgeInsets.only(
-                    top: ResponsiveWidget.isSmallScreen(context) ? 56 : 6),
-                child: CustomText(
-                  text: menuController.activeItem.value,
-                  size: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              )
+                  margin: EdgeInsets.only(
+                      top: Responsive.isMobile(context) ? 56 : 6),
+                  child: CustomText(
+                    text: menuController.activeItem.value,
+                    size: 24,
+                    fontWeight: FontWeight.bold,
+                  )),
             ],
           ),
-        )
+        ),
+        Expanded(
+            child: ListView(
+          children: const [
+            RecordsTable(),
+          ],
+        )),
       ],
     );
   }

@@ -12,6 +12,7 @@ import 'package:riset_konsentrasi/pages/authetication/login/login_screen.dart';
 import 'package:riset_konsentrasi/pages/authetication/signup/signup_screen.dart';
 import 'package:riset_konsentrasi/pages/landing/landing_screen.dart';
 import 'package:riset_konsentrasi/pages/overview/overview.dart';
+import 'package:riset_konsentrasi/repositories/coordinate_repository.dart';
 
 import 'constants/cubit/theme_cubit.dart';
 
@@ -44,7 +45,10 @@ class MyApp extends StatelessWidget {
             theme: AppTheme.light,
             darkTheme: AppTheme.dark,
             themeMode: themeMode,
-            home: const LandingScreen(), //TODO:: Better routing with GetX
+            home: RepositoryProvider(
+              create: (context) => CoordinateRepository(),
+              child: const LandingScreen(),
+            ),
             //TODO:: add 404 page
             // onUnknownRoute: (settings) {
             //   GetPage(

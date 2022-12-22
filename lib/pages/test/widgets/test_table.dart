@@ -5,8 +5,8 @@ import 'package:riset_konsentrasi/constants/style.dart';
 import '../../../widgets/custom_text.dart';
 
 /// Example without datasource
-class RecordsTable extends StatelessWidget {
-  const RecordsTable({super.key});
+class TestTable extends StatelessWidget {
+  const TestTable({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,24 +39,25 @@ class RecordsTable extends StatelessWidget {
               (index) => DataRow(cells: [
                     DataCell(CustomText(text: "Santos Enoque")),
                     DataCell(CustomText(text: "New yourk city")),
-                    DataCell(
-                        Row(mainAxisSize: MainAxisSize.min, children: const [
-                      Icon(Icons.star, color: Colors.deepOrange, size: 18),
-                      SizedBox(width: 5),
-                      CustomText(text: "4.5")
-                    ])),
+                    DataCell(Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: const [
+                        Icon(Icons.star, color: Colors.deepOrange, size: 18),
+                        SizedBox(width: 5),
+                        CustomText(text: "4.5")
+                      ],
+                    )),
                     DataCell(Container(
                         decoration: BoxDecoration(
                             color: AppColor.white,
                             borderRadius: BorderRadius.circular(20),
-                            border: Border.all(
-                                color: AppColor.primaryColor, width: .5)),
+                            border: Border.all(color: AppColor.primaryColor, width: .5)),
                         padding: const EdgeInsets.symmetric(
                             horizontal: 12, vertical: 6),
                         child: CustomText(
                             text: "Block",
                             color: AppColor.primaryColor.withOpacity(.7),
-                            fontWeight: FontWeight.bold))),
+                            fontWeight: FontWeight.bold)))
                   ]))),
     );
   }

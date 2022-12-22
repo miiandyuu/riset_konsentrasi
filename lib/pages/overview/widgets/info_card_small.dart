@@ -28,7 +28,10 @@ class InfoCardSmall extends StatelessWidget {
               color: Colors.white,
               borderRadius: BorderRadius.circular(8),
               border: Border.all(
-                  color: isActive! ? primary : lightGrey, width: .5)),
+                  color: isActive!
+                      ? AppColor.primaryColor
+                      : AppColor.backgroundGray,
+                  width: .5)),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -36,13 +39,15 @@ class InfoCardSmall extends StatelessWidget {
                 text: title,
                 size: 24,
                 fontWeight: FontWeight.w300,
-                color: isActive! ? primary : lightGrey,
+                color:
+                    isActive! ? AppColor.primaryColor : AppColor.backgroundGray,
               ),
               CustomText(
                 text: value,
                 size: 24,
                 fontWeight: FontWeight.bold,
-                color: isActive! ? primary : lightGrey,
+                color:
+                    isActive! ? AppColor.primaryColor : AppColor.backgroundGray,
               ),
             ],
           ),

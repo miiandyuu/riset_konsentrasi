@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "716326662088",
+    "firebase_url": "https://testing-projek-8349e-default-rtdb.firebaseio.com",
+    "project_id": "testing-projek-8349e",
+    "storage_bucket": "testing-projek-8349e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716326662088:android:fdd97f4403296dd0219afd",
+        "android_client_info": {
+          "package_name": "com.teuns.riset_konsentrasi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "716326662088-34la229sno53niq3rb5kv99hb3g8m2fk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnh0H7fAdB8FU6mtcRbYUBnkyla6e1nEc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "716326662088-34la229sno53niq3rb5kv99hb3g8m2fk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
