@@ -11,10 +11,10 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
           ? Row(
               children: [
                 Container(
-                  padding: const EdgeInsets.only(left: 14),
+                  padding: const EdgeInsets.only(left: 24),
                   child: Image.asset(
-                    "assets/logoUNS.png",
-                    width: 28,
+                    "icons/logoUNS.png",
+                    width: 32,
                   ),
                 )
               ],
@@ -30,7 +30,7 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
           Visibility(
               child: CustomText(
             text: "Riset Konsentrasi",
-            color: AppColor.backgroundGray,
+            color: AppColor.primaryColor,
             size: 20,
             fontWeight: FontWeight.bold,
           )),

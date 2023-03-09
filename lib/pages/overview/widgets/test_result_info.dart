@@ -15,9 +15,9 @@ class TestResultInfo extends StatelessWidget {
           text: TextSpan(children: [
             TextSpan(
                 text: "$title \n\n",
-                style: TextStyle(color: AppColor.backgroundGray, fontSize: 16)),
+                style: TextStyle(color: AppColor.primaryColor, fontSize: 16)),
             TextSpan(
-                text: "\$ $amount ",
+                text: "$amount ",
                 style:
                     const TextStyle(fontWeight: FontWeight.bold, fontSize: 24)),
           ])),

@@ -1,66 +1,52 @@
-import uuid
-from flask import Blueprint, request, jsonify
-from firebase_admin import firestore
+import firebase_admin
+from firebase_admin import credentials, firestore
 import random
 
+cred = credentials.Certificate("firebaseAPI/api/key.json") #NOTE: put your apiKey file here
+default_app = firebase_admin.initialize_app(cred)
 db = firestore.client()
-user_Ref = db.collection('userTest')
+user_Ref = db.collection('Ricky Aston')
 
-userAPI = Blueprint('userAPI', __name__)
+def new_func():
+    listTest = []
 
-@userAPI.route('/add', methods=['POST'])
-def create():
-    try:
-        id = uuid.uuid4()
-        user_Ref.document(id.hex).set(request.json)
-        return jsonify({"success": True}), 200
-    except Exception as e:
-        return f"An Error Occured: {e}"
+    t=60
+    while t:
+        listTest.append(str(random.randrange(30)))
+        t -= 1
 
-@userAPI.route('/list')
-def read():
-    try:
-        all_coordinate = [doc.to_dict() for doc in user_Ref.get()]
-        return jsonify(all_coordinate), 200
-    except Exception as e:
-        return f"An Error Occured: {e}"
+    x = []
+    y = []
+    count = 0
+    for i in listTest:
+        if count % 2 == 1:
+            y = listTest[1::2]
+        else: x = listTest[0::2]
+        count += 1
 
+    checkKoordinat = list(zip(x, y))
 
-@userAPI.route('/test', methods=['POST'])
-def test():
-    try:
-        listTest = []
-        t = 60
-        while t:
-            listTest.append(str(random.randrange(30)))
-            t -= 1
-
-        x = []
-        y = []
-        count = 0
-        for i in listTest:
-            if count % 2 == 1:
-                y = listTest[1::2]
-            else: x = listTest[0::2]
-            count += 1
-
-        checkKoordinat = list(zip(x, y))
-
-        saveKoordinat = {}
-        final = {}
-        for index, item in enumerate(checkKoordinat):
-            x = item[0]
-            y = item[1]
+    saveKoordinat = {}
+    final = {}
+    for index, item in enumerate(checkKoordinat):
+        x = item[0]
+        y = item[1]
                 
-            saveKoordinat = {
-                    f'{index}' : {
-                        'x' : x,
-                        'y' : y
-                    }
-                }
-            final = final | saveKoordinat
-        user_Ref.document('cobaRandomKoordinat').set(final)
-        return jsonify({"success": True}), 200
-    except Exception as e:
-        return f"An Error Occured: {e}"
+        saveKoordinat = {
+        f'{index}' : {
+            'x' : x,
+            'y' : y
+        }
+    }
+        final = final | saveKoordinat
+    return final
 
+final = new_func()
+
+indexGambar = 1
+while True:
+    while indexGambar < 6:
+        new_func()
+        final = new_func()
+        user_Ref.document('Gambar'f'{indexGambar}').set(final)
+        indexGambar += 1

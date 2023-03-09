@@ -23,16 +23,20 @@ class HeaderRow extends StatelessWidget {
                         ),
                         padding: const EdgeInsets.symmetric(
                             horizontal: 20.0, vertical: 5.0),
-                        child: TextButton(
-                            onPressed: item.onTap,
-                            child: Text(
-                              item.title,
-                              style: TextStyle(
-                                color: AppColor.white,
-                                fontSize: 13,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            )),
+                        child: Row(
+                          children: [
+                            TextButton(
+                                onPressed: item.onTap,
+                                child: Text(
+                                  item.title,
+                                  style: TextStyle(
+                                    color: AppColor.white,
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                )),
+                          ],
+                        ),
                       ),
                     )
                   : MouseRegion(

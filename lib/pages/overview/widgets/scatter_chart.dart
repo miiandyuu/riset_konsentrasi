@@ -1,8 +1,10 @@
 // ignore_for_file: library_private_types_in_public_api, unused_local_variable
 
 import 'dart:async';
+import 'dart:convert';
 import 'dart:math';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
@@ -16,6 +18,48 @@ class TestChart extends StatefulWidget {
 class TestChartState extends State<TestChart> {
   late List<_ChartData> data;
   late TooltipBehavior _tooltip;
+  final CollectionReference firestoreInstance =
+      FirebaseFirestore.instance.collection('Ricky Aston');
+
+  loadData() async {
+    await firestoreInstance.doc('Gambar1').get().then((value) {
+      String x = value['1']['x'];
+      String y = value['1']['y'];
+      // return x;
+    });
+    for (var i = 1;
+        i < (await firestoreInstance.count().get()).count + 1;
+        i++) {
+      await firestoreInstance.doc('Gambar$i').get().then((value) {
+        String x = value['$i']['x'];
+        String y = value['1']['y'];
+        // print(x);
+        // return x;  
+        print("X: $x, Y: $y");
+      });
+    }
+  }
+
+  coordinateX() async {
+    for (var i = 1;
+        i < (await firestoreInstance.count().get()).count + 1;
+        i++) {
+      await firestoreInstance.doc('Gambar$i').get().then((value) {
+        String x = value['$i']['x'];
+        // String y = value['1']['y'];
+        // print(x);
+        return x;
+      });
+    }
+  }
+
+  coordinateY() {
+    firestoreInstance.doc('Gambar1').get().then((value) {
+      // String x = value['1']['x'];
+      String y = value['1']['y'];
+      // print(x);
+    });
+  }
 
   @override
   void initState() {
@@ -33,6 +77,7 @@ class TestChartState extends State<TestChart> {
           setState(() {
             start--;
             data.add(_ChartData(randomXNum(), randomYNum()));
+            loadData();
           });
         }
       },
@@ -51,8 +96,8 @@ class TestChartState extends State<TestChart> {
   Widget build(BuildContext context) {
     return SfCartesianChart(
         backgroundColor: Colors.white,
-
-        // plotAreaBackgroundImage: , // TODO:: put in your iamge here
+        plotAreaBackgroundImage:
+            AssetImage("images/instruments/newanimal2.png"),
         enableMultiSelection: true,
         primaryXAxis: NumericAxis(minimum: 0, maximum: 40, interval: 10),
         primaryYAxis: NumericAxis(minimum: 0, maximum: 40, interval: 10),
@@ -70,6 +115,7 @@ class TestChartState extends State<TestChart> {
   }
 
   randomXNum() {
+    coordinateX();
     var random = Random();
     for (var i = 0; i < 40; i++) {
       return random.nextDouble() * 40;

@@ -2,7 +2,7 @@
 import random
 import time
 
-i = 1
+# i = 1
 listTest = []
 t=60
 while t:
@@ -30,7 +30,7 @@ for index, item in enumerate(checkKoordinat):
     y = item[1]
         
     saveKoordinat = {
-            index : {
+            f'{index}' : {
                 'x' : x,
                 'y' : y
             }

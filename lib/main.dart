@@ -5,9 +5,11 @@ import 'package:get/get.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:riset_konsentrasi/constants/controllers.dart';
 import 'package:riset_konsentrasi/constants/style.dart';
-import 'package:riset_konsentrasi/controllers/menu_controller.dart';
+import 'package:riset_konsentrasi/controllers/menu_controller.dart'
+    as LMenuController;
 import 'package:riset_konsentrasi/controllers/navigation_controller.dart';
 import 'package:riset_konsentrasi/firebase_options.dart';
+import 'package:riset_konsentrasi/layout.dart';
 import 'package:riset_konsentrasi/pages/authetication/login/login_screen.dart';
 import 'package:riset_konsentrasi/pages/authetication/signup/signup_screen.dart';
 import 'package:riset_konsentrasi/pages/landing/landing_screen.dart';
@@ -19,7 +21,7 @@ import 'constants/cubit/theme_cubit.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  Get.put(MenuController());
+  Get.put(LMenuController.MenuController());
   Get.put(NavigationController());
   MainModule.init();
   runApp(const MyApp());
@@ -45,12 +47,12 @@ class MyApp extends StatelessWidget {
             theme: AppTheme.light,
             darkTheme: AppTheme.dark,
             themeMode: themeMode,
-            home: const LandingScreen(),
+            // home: const LandingScreen(),
             //TODO: Change repoProvider after login
-            // home: RepositoryProvider(
-            //   create: (context) => CoordinateRepository(),
-            //   child: const LandingScreen(),
-            // ),
+            home: RepositoryProvider(
+              create: (context) => CoordinateRepository(),
+              child: const LandingScreen(),
+            ),
             //TODO:: add 404 page
             // onUnknownRoute: (settings) {
             //   GetPage(
@@ -59,6 +61,7 @@ class MyApp extends StatelessWidget {
             //   );
             // },
             getPages: [
+              GetPage(name: '/dashboard', page: () => SiteLayout()),
               GetPage(
                 name: '/home',
                 page: () => const LandingScreen(),
@@ -71,10 +74,10 @@ class MyApp extends StatelessWidget {
                 name: '/login',
                 page: () => const LoginScreen(),
               ),
-              GetPage(
-                name: "/dashboard",
-                page: () => const OverviewScreen(),
-              )
+              // GetPage(
+              //   name: "/dashboard",
+              //   page: () => const OverviewScreen(),
+              // )
             ],
 
             builder: (context, child) {

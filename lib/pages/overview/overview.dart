@@ -124,10 +124,10 @@ class _OverviewScreenState extends State<OverviewScreen> {
             //   const OverviewCardsSmall(),
             const SizedBox(height: 24),
             if (!Responsive.isMobile(context))
-              const TestResultInfoSectionLarge()
+              TestResultInfoSectionLarge()
             else
               const TestResultInfoSectionSmall(),
-            const RecentTestTable()
+            // const RecentTestTable()
           ],
         ))
       ],

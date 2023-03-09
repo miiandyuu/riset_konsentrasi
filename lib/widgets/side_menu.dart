@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 // import 'package:riset_konsentrasi/constants/controllers.dart';
 import 'package:riset_konsentrasi/constants/style.dart';
+import 'package:riset_konsentrasi/pages/authetication/login/login_screen.dart';
 import 'package:riset_konsentrasi/widgets/custom_text.dart';
 import 'package:riset_konsentrasi/widgets/side_menu_item.dart';
 
@@ -25,16 +26,14 @@ class SideMenu extends StatelessWidget {
           Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const SizedBox(
-                height: 40,
-              ),
+              const SizedBox(height: 40),
               Row(
                 children: [
                   SizedBox(width: width / 48),
                   Padding(
                     padding: const EdgeInsets.only(right: 12),
                     child: Image.asset(
-                      "assets/logoUNS.png",
+                      "icons/logoUNS.png",
                       width: 28,
                     ),
                   ),
@@ -51,7 +50,7 @@ class SideMenu extends StatelessWidget {
             ],
           ),
         // SizedBox(height: 40),
-        Divider(color: AppColor.backgroundGray.withOpacity(.1)),
+        Divider(color: AppColor.backgroundGray),
         Column(
           mainAxisSize: MainAxisSize.min,
           children: sideMenuItems
@@ -64,6 +63,13 @@ class SideMenu extends StatelessWidget {
                         Get.offAllNamed(AppRouteName.logoutPageRoute);
                         auth.signOut();
                       }
+
+                      // if (item.route == AppRouteName.logoutPageRoute) {
+                      //   menuController.changeActiveItemTo(
+                      //       AppRouteName.overviewPageDisplayName);
+                      //   Get.offAllNamed(AppRouteName.logoutPageRoute);
+                      //   auth.signOut();
+                      // }
 
                       if (!menuController.isActive(item.name)) {
                         menuController.changeActiveItemTo(item.name);

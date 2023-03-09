@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:riset_konsentrasi/constants/style.dart';
 import 'package:riset_konsentrasi/pages/overview/widgets/scatter_chart.dart';
@@ -5,7 +6,28 @@ import 'package:riset_konsentrasi/pages/overview/widgets/test_result_info.dart';
 import 'package:riset_konsentrasi/widgets/custom_text.dart';
 
 class TestResultInfoSectionLarge extends StatelessWidget {
-  const TestResultInfoSectionLarge({super.key});
+  TestResultInfoSectionLarge({super.key});
+
+  final CollectionReference firestoreInstance =
+      FirebaseFirestore.instance.collection('Ricky Aston');
+
+  loadData() async {
+    // await firestoreInstance.doc('Gambar1').get().then((value) {
+    //   String x = value['1']['x'];
+    //   String y = value['1']['y'];
+    //   // return x;
+    // });
+    for (var i = 1;
+        i < (await firestoreInstance.count().get()).count + 1;
+        i++) {
+      await firestoreInstance.doc('Gambar$i').get().then((value) {
+        String x = value['$i']['x'];
+        // String y = value['1']['y'];
+        // print(x);
+        return x;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,8 +54,8 @@ class TestResultInfoSectionLarge extends StatelessWidget {
                   text: "Test Result Chart",
                   size: 20,
                   fontWeight: FontWeight.bold,
-                  color: AppColor.backgroundGray),
-              TestChart()
+                  color: AppColor.primaryColor),
+              const TestChart()
             ],
           )),
           Container(
@@ -47,8 +69,8 @@ class TestResultInfoSectionLarge extends StatelessWidget {
             children: [
               Row(
                 children: const [
-                  TestResultInfo(title: "Today Result", amount: "23"),
-                  TestResultInfo(title: "Last 7 days", amount: "150"),
+                  TestResultInfo(title: "Nama User", amount: "Reva"),
+                  TestResultInfo(title: "Nama Penguji", amount: "Reva"),
                 ],
               ),
               const SizedBox(
@@ -56,10 +78,14 @@ class TestResultInfoSectionLarge extends StatelessWidget {
               ),
               Row(
                 children: const [
-                  TestResultInfo(title: "Today Result", amount: "23"),
-                  TestResultInfo(title: "Last 7 days", amount: "150"),
+                  TestResultInfo(
+                      title: "Tanggal Pengujian", amount: "26/12/2022"),
+                  // TestResultInfo(title: "Last 7 days", amount: "150"),
                 ],
               ),
+              Container(
+                child: Column(children: []),
+              )
             ],
           ))
         ],

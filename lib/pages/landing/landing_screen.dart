@@ -5,6 +5,7 @@ import 'package:riset_konsentrasi/pages/landing/widgets/features_section.dart';
 import 'package:riset_konsentrasi/pages/landing/widgets/globals.dart';
 import 'package:riset_konsentrasi/pages/landing/widgets/header.dart';
 import 'package:riset_konsentrasi/pages/landing/widgets/product_section.dart';
+import 'package:riset_konsentrasi/pages/test/test.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({super.key});
@@ -63,9 +64,20 @@ class LandingScreen extends StatelessWidget {
               child: Header(),
             ),
             Carousel(),
-            SizedBox(height: 20.0),
+            // TextButton(
+            //     onPressed: () {
+            //       Navigator.push(
+            //         context,
+            //         MaterialPageRoute(builder: (context) => const TestPage()),
+            //       );
+            //     },
+            //     child: Text("Testing Dev")),
+            SizedBox(height: 10.0),
             FeaturesSection(),
             ProductSection(),
+            SizedBox(
+              height: 40.0,
+            )
           ],
         )),
       ),

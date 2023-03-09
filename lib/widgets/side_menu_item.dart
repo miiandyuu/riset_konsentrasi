@@ -13,7 +13,7 @@ class SideMenuItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (Responsive.isDesktop(context)) {
+    if (Responsive.isCustom(context)) {
       return VerticalMenuItem(
         itemName: itemName,
         onTap: onTap,

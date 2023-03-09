@@ -32,7 +32,7 @@ class HorizontalMenuItem extends StatelessWidget {
                 maintainState: true,
                 maintainAnimation: true,
                 child: Container(
-                    width: 6, height: 40, color: AppColor.backgroundBlack),
+                    width: 6, height: 40, color: AppColor.primaryColor),
               ),
               SizedBox(width: width / 80),
               Padding(
@@ -44,14 +44,14 @@ class HorizontalMenuItem extends StatelessWidget {
                     child: CustomText(
                   text: itemName,
                   color: menuController.isHovering(itemName)
-                      ? AppColor.backgroundBlack
+                      ? AppColor.primaryColor
                       : AppColor.backgroundGray,
                 ))
               else
                 Flexible(
                     child: CustomText(
                   text: itemName,
-                  color: AppColor.backgroundBlack,
+                  color: AppColor.primaryColor,
                   size: 18,
                   fontWeight: FontWeight.bold,
                 ))

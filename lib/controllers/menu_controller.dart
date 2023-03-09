@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:riset_konsentrasi/constants/style.dart';
 import 'package:riset_konsentrasi/routing/app_route_name.dart';
 
-import '../routing/routes.dart';
+// import '../routing/routes.dart';
 
 class MenuController extends GetxController {
   static MenuController instance = Get.find();
@@ -40,12 +40,12 @@ class MenuController extends GetxController {
 
   Widget _customIcon(IconData icon, String itemName) {
     if (isActive(itemName)) {
-      return Icon(icon, size: 22, color: AppColor.backgroundBlack);
+      return Icon(icon, size: 22, color: AppColor.primaryColor);
     }
 
     return Icon(icon,
         color: isHovering(itemName)
-            ? AppColor.backgroundBlack
+            ? AppColor.primaryColor
             : AppColor.backgroundGray);
   }
 }

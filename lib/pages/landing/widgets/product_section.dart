@@ -53,7 +53,7 @@ class ProductSection extends StatelessWidget {
                             ),
                             SizedBox(height: 10.0),
                             Text(
-                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis lacus est. Vestibulum feugiat urna dui, sed imperdiet orci ultrices in. Phasellus in nisl efficitur, consequat erat nec, fringilla nisl.",
+                              "Menggunakan perangkat VR dan aplikasi web yang dikembangkan sendiri sehingga memiliki ekosistem terintegrasi yang mudah untuk digunakan.",
                               style: AppTextStyle.instance.bodyMedium,
                             ),
                             SizedBox(height: 25.0),

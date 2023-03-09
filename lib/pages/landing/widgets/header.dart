@@ -46,7 +46,7 @@ class Header extends StatelessWidget {
 
   Widget buildHeader() {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: const [HeaderRow()],
