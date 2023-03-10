@@ -3,17 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:riset_konsentrasi/constants/controllers.dart';
+// import 'package:riset_konsentrasi/constants/controllers.dart';
 import 'package:riset_konsentrasi/constants/style.dart';
 import 'package:riset_konsentrasi/controllers/menu_controller.dart'
-    as LMenuController;
+    as l_menu_controller;
 import 'package:riset_konsentrasi/controllers/navigation_controller.dart';
 import 'package:riset_konsentrasi/firebase_options.dart';
 import 'package:riset_konsentrasi/layout.dart';
 import 'package:riset_konsentrasi/pages/authetication/login/login_screen.dart';
 import 'package:riset_konsentrasi/pages/authetication/signup/signup_screen.dart';
 import 'package:riset_konsentrasi/pages/landing/landing_screen.dart';
-import 'package:riset_konsentrasi/pages/overview/overview.dart';
+import 'package:riset_konsentrasi/pages/records/records_screen.dart';
+import 'package:riset_konsentrasi/pages/test/test_screen.dart';
+// import 'package:riset_konsentrasi/pages/overview/overview.dart';
 import 'package:riset_konsentrasi/repositories/coordinate_repository.dart';
 
 import 'constants/cubit/theme_cubit.dart';
@@ -21,7 +23,7 @@ import 'constants/cubit/theme_cubit.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  Get.put(LMenuController.MenuController());
+  Get.put(l_menu_controller.MenuController());
   Get.put(NavigationController());
   MainModule.init();
   runApp(const MyApp());
@@ -73,6 +75,18 @@ class MyApp extends StatelessWidget {
               GetPage(
                 name: '/login',
                 page: () => const LoginScreen(),
+              ),
+              GetPage(
+                name: '/records',
+                page: () => const RecordsScreen(),
+              ),
+              GetPage(
+                name: '/test',
+                page: () => const TestScreen(),
+              ),
+              GetPage(
+                name: '/auth',
+                page: () => const LandingScreen(),
               ),
               // GetPage(
               //   name: "/dashboard",

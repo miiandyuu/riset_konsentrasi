@@ -119,7 +119,7 @@ class _LoginFormState extends State<LoginForm> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text("Don't have an account yet?",
-                        style: Theme.of(context).textTheme.button),
+                        style: Theme.of(context).textTheme.labelLarge),
                     const SizedBox(width: 8),
                     TextButton(
                         onPressed: () {

@@ -7,13 +7,11 @@ class InfoCardSmall extends StatelessWidget {
       {super.key,
       required this.title,
       required this.value,
-      // this.topColor,
       this.isActive = false,
       this.onTap});
 
   final String title;
   final String value;
-  // final Color? topColor;
   final bool? isActive;
   final Function()? onTap;
 

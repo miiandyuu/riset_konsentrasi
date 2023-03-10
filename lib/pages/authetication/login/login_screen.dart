@@ -44,7 +44,7 @@ class LoginScreen extends StatelessWidget {
               child: Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                      color: Theme.of(context).backgroundColor,
+                      color: Theme.of(context).colorScheme.background,
                       shape: BoxShape.circle,
                       border: Responsive.isMobile(context)
                           ? Border.all(color: Colors.grey, width: 1)

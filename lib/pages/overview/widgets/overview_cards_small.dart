@@ -11,7 +11,7 @@ class OverviewCardsSmall extends StatelessWidget {
       child: Column(
         children: [
           InfoCardSmall(
-            title: "Rides in Progress",
+            title: "Jumlah Pasien",
             value: "7",
             onTap: () {},
             isActive: true,
@@ -20,7 +20,7 @@ class OverviewCardsSmall extends StatelessWidget {
             height: 16,
           ),
           InfoCardSmall(
-            title: "Rides in Progress",
+            title: "Menunggu Pengujian",
             value: "7",
             onTap: () {},
             isActive: true,
@@ -29,7 +29,7 @@ class OverviewCardsSmall extends StatelessWidget {
             height: 16,
           ),
           InfoCardSmall(
-            title: "Rides in Progress",
+            title: "Menunggu Analisa",
             value: "7",
             onTap: () {},
             isActive: true,
@@ -38,7 +38,7 @@ class OverviewCardsSmall extends StatelessWidget {
             height: 16,
           ),
           InfoCardSmall(
-            title: "Rides in Progress",
+            title: "Selesai Pengujian",
             value: "7",
             onTap: () {},
             isActive: true,

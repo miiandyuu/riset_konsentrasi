@@ -3,8 +3,6 @@ import 'package:get/get.dart';
 import 'package:riset_konsentrasi/constants/style.dart';
 import 'package:riset_konsentrasi/routing/app_route_name.dart';
 
-// import '../routing/routes.dart';
-
 class MenuController extends GetxController {
   static MenuController instance = Get.find();
 

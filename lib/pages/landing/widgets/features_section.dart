@@ -33,7 +33,7 @@ class FeaturesSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       child: Responsive(
           mobile: _buildUI(context, MediaQuery.of(context).size.width * .8),
@@ -66,54 +66,52 @@ class FeaturesSection extends StatelessWidget {
           //     )
           //   ],
           // ),
-          SizedBox(
+          const SizedBox(
             height: 50.0,
           ),
-          Container(
-            child: LayoutBuilder(
-              builder: (_context, constraints) {
-                return ResponsiveGridView.builder(
-                  padding: EdgeInsets.all(0.0),
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  alignment: Alignment.topCenter,
-                  gridDelegate: ResponsiveGridDelegate(
-                      mainAxisSpacing: 20.0,
-                      crossAxisSpacing: 20.0,
-                      maxCrossAxisExtent: Responsive.isTablet(context) ||
-                              Responsive.isMobile(context)
-                          ? constraints.maxWidth / 2.0
-                          : 250.0,
-                      childAspectRatio: Responsive.isDesktop(context)
-                          ? 1
-                          : MediaQuery.of(context).size.aspectRatio * 1.5),
-                  itemBuilder: (context, index) {
-                    return Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            featuresModel[index].icon,
-                            SizedBox(width: 15.0),
-                            Text(
-                              featuresModel[index].title,
-                              style: AppTextStyle.instance.headlineSmall,
-                            )
-                          ],
-                        ),
-                        SizedBox(height: 15.0),
-                        Text(
-                          featuresModel[index].subtitle,
-                          style: AppTextStyle.instance.bodyMedium,
-                        )
-                      ],
-                    );
-                  },
-                  itemCount: featuresModel.length,
-                );
-              },
-            ),
+          LayoutBuilder(
+            builder: (context, constraints) {
+              return ResponsiveGridView.builder(
+                padding: const EdgeInsets.all(0.0),
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                alignment: Alignment.topCenter,
+                gridDelegate: ResponsiveGridDelegate(
+                    mainAxisSpacing: 20.0,
+                    crossAxisSpacing: 20.0,
+                    maxCrossAxisExtent: Responsive.isTablet(context) ||
+                            Responsive.isMobile(context)
+                        ? constraints.maxWidth / 2.0
+                        : 250.0,
+                    childAspectRatio: Responsive.isDesktop(context)
+                        ? 1
+                        : MediaQuery.of(context).size.aspectRatio * 1.5),
+                itemBuilder: (context, index) {
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          featuresModel[index].icon,
+                          const SizedBox(width: 15.0),
+                          Text(
+                            featuresModel[index].title,
+                            style: AppTextStyle.instance.headlineSmall,
+                          )
+                        ],
+                      ),
+                      const SizedBox(height: 15.0),
+                      Text(
+                        featuresModel[index].subtitle,
+                        style: AppTextStyle.instance.bodyMedium,
+                      )
+                    ],
+                  );
+                },
+                itemCount: featuresModel.length,
+              );
+            },
           ),
         ],
       ),

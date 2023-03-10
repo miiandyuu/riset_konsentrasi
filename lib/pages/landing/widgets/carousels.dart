@@ -4,16 +4,21 @@ import 'package:responsive_framework/responsive_framework.dart';
 import 'package:riset_konsentrasi/helpers/responsive_screen.dart';
 import 'package:riset_konsentrasi/pages/landing/widgets/carousel_items.dart';
 
-class Carousel extends StatelessWidget {
-  CarouselController carouselController = CarouselController();
+class Carousel extends StatefulWidget {
+  const Carousel({super.key});
 
-  Carousel({super.key});
+  @override
+  State<Carousel> createState() => _CarouselState();
+}
+
+class _CarouselState extends State<Carousel> {
+  CarouselController carouselController = CarouselController();
 
   @override
   Widget build(BuildContext context) {
     double carouselContainerHeight = MediaQuery.of(context).size.height *
         (Responsive.isMobile(context) ? .7 : .85);
-    return Container(
+    return SizedBox(
       height: carouselContainerHeight,
       width: double.infinity,
       child: Column(
@@ -26,7 +31,7 @@ class Carousel extends StatelessWidget {
               options: CarouselOptions(
                   // autoPlay: true,
                   viewportFraction: 1,
-                  scrollPhysics: NeverScrollableScrollPhysics(),
+                  scrollPhysics: const NeverScrollableScrollPhysics(),
                   height: carouselContainerHeight),
               items: List.generate(
                 carouselItems.length,

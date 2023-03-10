@@ -5,8 +5,7 @@ import 'package:riset_konsentrasi/models/carousel_items_model.dart';
 List<CarouselItemModel> carouselItems = List.generate(
     5,
     (index) => CarouselItemModel(
-        text: Container(
-            child: Column(
+        text: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
@@ -46,10 +45,8 @@ List<CarouselItemModel> carouselItems = List.generate(
               ),
             )
           ],
-        )),
-        image: Container(
-          child: Image.asset(
-            "assets/images/landing-page.png",
-            fit: BoxFit.contain,
-          ),
+        ),
+        image: Image.asset(
+          "assets/images/landing-page.png",
+          fit: BoxFit.contain,
         )));

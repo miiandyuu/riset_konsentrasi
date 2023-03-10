@@ -4,7 +4,6 @@ import 'package:riset_konsentrasi/constants/style.dart';
 
 import '../../../widgets/custom_text.dart';
 
-/// Example without datasource
 class RecordsTable extends StatelessWidget {
   const RecordsTable({super.key});
 
@@ -28,7 +27,7 @@ class RecordsTable extends StatelessWidget {
           columnSpacing: 12,
           horizontalMargin: 12,
           minWidth: 600,
-          columns: [
+          columns: const [
             DataColumn2(label: Text("Name"), size: ColumnSize.L),
             DataColumn(label: Text('Location')),
             DataColumn(label: Text('Rating')),
@@ -37,8 +36,8 @@ class RecordsTable extends StatelessWidget {
           rows: List<DataRow>.generate(
               15,
               (index) => DataRow(cells: [
-                    DataCell(CustomText(text: "Santos Enoque")),
-                    DataCell(CustomText(text: "New yourk city")),
+                    const DataCell(CustomText(text: "Santos Enoque")),
+                    const DataCell(CustomText(text: "New yourk city")),
                     DataCell(
                         Row(mainAxisSize: MainAxisSize.min, children: const [
                       Icon(Icons.star, color: Colors.deepOrange, size: 18),

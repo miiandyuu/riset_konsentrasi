@@ -28,9 +28,9 @@ class RecentTestTable extends StatelessWidget {
       ], rows: [
         for (var i = 0; i < 5; i++)
           DataRow(cells: [
-            DataCell(Text("Ricky Aston")),
-            DataCell(Text("Prof. Reva")),
-            DataCell(Text("Hayyan Yusuf")),
+            const DataCell(Text("Ricky Aston")),
+            const DataCell(Text("Prof. Reva")),
+            const DataCell(Text("Hayyan Yusuf")),
             DataCell(Container(
               decoration: BoxDecoration(
                   border: Border.all(color: AppColor.primaryColor, width: .5),
@@ -38,6 +38,7 @@ class RecentTestTable extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20)),
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
               child: CustomText(
+                //TODO: change text into testing status
                 text: "Test Selesai",
                 color: AppColor.primaryColor.withOpacity(.7),
                 fontWeight: FontWeight.bold,

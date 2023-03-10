@@ -1,7 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api, unused_local_variable
 
 import 'dart:async';
-import 'dart:convert';
+// import 'dart:convert';
 import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -34,7 +34,7 @@ class TestChartState extends State<TestChart> {
         String x = value['$i']['x'];
         String y = value['1']['y'];
         // print(x);
-        // return x;  
+        // return x;
         print("X: $x, Y: $y");
       });
     }
@@ -97,7 +97,7 @@ class TestChartState extends State<TestChart> {
     return SfCartesianChart(
         backgroundColor: Colors.white,
         plotAreaBackgroundImage:
-            AssetImage("images/instruments/newanimal2.png"),
+            const AssetImage("images/instruments/newanimal2.png"),
         enableMultiSelection: true,
         primaryXAxis: NumericAxis(minimum: 0, maximum: 40, interval: 10),
         primaryYAxis: NumericAxis(minimum: 0, maximum: 40, interval: 10),
@@ -117,14 +117,18 @@ class TestChartState extends State<TestChart> {
   randomXNum() {
     coordinateX();
     var random = Random();
-    for (var i = 0; i < 40; i++) {
+    // var i = 0;
+    // while (i < 40) {
+    //   return random.nextDouble();
+    // }
+    for (var i = 0; i < 40;) {
       return random.nextDouble() * 40;
     }
   }
 
   randomYNum() {
     var random = Random();
-    for (var i = 0; i < 40; i++) {
+    for (var i = 0; i < 40;) {
       return random.nextDouble() * 40;
     }
   }

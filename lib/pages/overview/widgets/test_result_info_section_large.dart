@@ -83,9 +83,7 @@ class TestResultInfoSectionLarge extends StatelessWidget {
                   // TestResultInfo(title: "Last 7 days", amount: "150"),
                 ],
               ),
-              Container(
-                child: Column(children: []),
-              )
+              Column(children: const [])
             ],
           ))
         ],

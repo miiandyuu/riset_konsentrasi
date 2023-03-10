@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -62,15 +63,15 @@ class _SignupFormState extends State<SignupForm> {
                   suffixIcon: const Icon(Icons.lock)),
               obscureText: true,
               style: Theme.of(context).textTheme.bodyMedium),
-          // const SizedBox(height: 16),
-          // TextField(
-          //     decoration: InputDecoration(
-          //         border: OutlineInputBorder(
-          //             borderRadius: BorderRadius.circular(8)),
-          //         label: const Text("Confirm Password"),
-          //         suffixIcon: const Icon(Icons.lock)),
-          //     obscureText: true,
-          //     style: Theme.of(context).textTheme.bodyMedium),
+          const SizedBox(height: 16),
+          TextField(
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8)),
+                  label: const Text("Confirm Password"),
+                  suffixIcon: const Icon(Icons.lock)),
+              obscureText: true,
+              style: Theme.of(context).textTheme.bodyMedium),
           const SizedBox(height: 32),
           SizedBox(
             width: MediaQuery.of(context).size.width,
@@ -80,11 +81,13 @@ class _SignupFormState extends State<SignupForm> {
                 try {
                   final newUser = await _auth.createUserWithEmailAndPassword(
                       email: email, password: password);
-                  if (newUser != null) {
+                  if (newUser == true) {
                     Get.toNamed("/dashboard");
                   }
                 } catch (e) {
-                  print(e);
+                  if (kDebugMode) {
+                    print(e);
+                  }
                 }
               },
               style: ElevatedButton.styleFrom(
@@ -121,7 +124,7 @@ class _SignupFormState extends State<SignupForm> {
               children: [
                 Text(
                   "Already have an account?",
-                  style: Theme.of(context).textTheme.button,
+                  style: Theme.of(context).textTheme.labelLarge,
                 ),
                 const SizedBox(width: 8),
                 TextButton(

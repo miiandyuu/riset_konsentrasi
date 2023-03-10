@@ -33,15 +33,14 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: Responsive(
+    return Responsive(
       desktop: Padding(
-        padding: EdgeInsets.symmetric(vertical: 8.0),
+        padding: const EdgeInsets.symmetric(vertical: 8.0),
         child: buildHeader(),
       ),
       mobile: buildMobileHeader(),
       tablet: buildHeader(),
-    ));
+    );
   }
 
   Widget buildHeader() {
@@ -57,7 +56,7 @@ class Header extends StatelessWidget {
   Widget buildMobileHeader() {
     return SafeArea(
         child: Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.0),
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
@@ -65,7 +64,7 @@ class Header extends StatelessWidget {
             onTap: () {
               Globals.scaffoldKey.currentState?.openEndDrawer();
             },
-            child: Icon(
+            child: const Icon(
               Icons.menu,
               color: Colors.black,
               size: 28.0,

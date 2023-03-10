@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 // import 'package:riset_konsentrasi/constants/controllers.dart';
 import 'package:riset_konsentrasi/constants/style.dart';
-import 'package:riset_konsentrasi/pages/authetication/login/login_screen.dart';
+// import 'package:riset_konsentrasi/pages/authetication/login/login_screen.dart';
 import 'package:riset_konsentrasi/widgets/custom_text.dart';
 import 'package:riset_konsentrasi/widgets/side_menu_item.dart';
 
@@ -63,13 +63,6 @@ class SideMenu extends StatelessWidget {
                         Get.offAllNamed(AppRouteName.logoutPageRoute);
                         auth.signOut();
                       }
-
-                      // if (item.route == AppRouteName.logoutPageRoute) {
-                      //   menuController.changeActiveItemTo(
-                      //       AppRouteName.overviewPageDisplayName);
-                      //   Get.offAllNamed(AppRouteName.logoutPageRoute);
-                      //   auth.signOut();
-                      // }
 
                       if (!menuController.isActive(item.name)) {
                         menuController.changeActiveItemTo(item.name);

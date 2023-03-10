@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:riset_konsentrasi/constants/style.dart';
 import 'package:riset_konsentrasi/pages/overview/widgets/info_card.dart';
 
 class OverviewCardsMedium extends StatelessWidget {
@@ -13,19 +14,23 @@ class OverviewCardsMedium extends StatelessWidget {
         Row(
           children: [
             InfoCard(
-              title: "Rides in Progress",
+              title: "Jumlah Pasien",
               value: "7",
-              onTap: () {},
-              topColor: Colors.orange,
+              onTap: () {
+                //TODO: Go to records
+              },
+              topColor: AppColor.primaryColorDark,
             ),
             SizedBox(
               width: width / 64,
             ),
             InfoCard(
-              title: "Rides in Progress",
+              title: "Menunggu Pengujian",
               value: "7",
-              onTap: () {},
-              topColor: Colors.orange,
+              onTap: () {
+                //TODO: Go to test
+              },
+              topColor: AppColor.primaryColorDark,
             ),
             SizedBox(
               width: width / 64,
@@ -38,19 +43,23 @@ class OverviewCardsMedium extends StatelessWidget {
         Row(
           children: [
             InfoCard(
-              title: "Rides in Progress",
+              title: "Menunggu Analisa",
               value: "7",
-              onTap: () {},
-              topColor: Colors.orange,
+              onTap: () {
+                //TODO: Go to test
+              },
+              topColor: AppColor.primaryColorDark,
             ),
             SizedBox(
               width: width / 64,
             ),
             InfoCard(
-              title: "Rides in Progress",
+              title: "Selesai Pengujian",
               value: "7",
-              onTap: () {},
-              topColor: Colors.orange,
+              onTap: () {
+                //TODO: Go to records
+              },
+              topColor: AppColor.primaryColorDark,
             ),
             SizedBox(
               width: width / 64,

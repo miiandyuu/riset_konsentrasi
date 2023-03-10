@@ -34,7 +34,7 @@ class TestResultInfoSectionSmall extends StatelessWidget {
                     size: 20,
                     fontWeight: FontWeight.bold,
                     color: AppColor.backgroundGray),
-                TestChart()
+                const TestChart()
               ],
             ),
           ),
