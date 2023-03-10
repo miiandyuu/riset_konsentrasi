@@ -12,7 +12,7 @@ def new_func():
 
     t=60
     while t:
-        listTest.append(str(random.randrange(30)))
+        listTest.append(int(random.randrange(30)))
         t -= 1
 
     x = []

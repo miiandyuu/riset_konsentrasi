@@ -14,7 +14,7 @@ import 'package:riset_konsentrasi/pages/authetication/login/login_screen.dart';
 import 'package:riset_konsentrasi/pages/authetication/signup/signup_screen.dart';
 import 'package:riset_konsentrasi/pages/landing/landing_screen.dart';
 import 'package:riset_konsentrasi/pages/records/records_screen.dart';
-import 'package:riset_konsentrasi/pages/test/test_screen.dart';
+// import 'package:riset_konsentrasi/pages/testing/testing_screen.dart';
 // import 'package:riset_konsentrasi/pages/overview/overview.dart';
 import 'package:riset_konsentrasi/repositories/coordinate_repository.dart';
 
@@ -76,14 +76,18 @@ class MyApp extends StatelessWidget {
                 name: '/login',
                 page: () => const LoginScreen(),
               ),
+              // GetPage(
+              //   name: '/testing',
+              //   page: () => const TestingScreen(),
+              // ),
               GetPage(
                 name: '/records',
                 page: () => const RecordsScreen(),
               ),
-              GetPage(
-                name: '/test',
-                page: () => const TestScreen(),
-              ),
+              // GetPage(
+              //   name: '/pengujian',
+              //   page: () => const TestingScreen(),
+              // ),
               GetPage(
                 name: '/auth',
                 page: () => const LandingScreen(),

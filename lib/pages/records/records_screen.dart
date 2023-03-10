@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:riset_konsentrasi/pages/testing/testing_screen.dart';
 
 import '../../constants/controllers.dart';
 import '../../constants/style.dart';
@@ -24,9 +25,9 @@ class _RecordsScreenState extends State<RecordsScreen> {
       setState(() {
         documents = value.docs;
       });
-      for (var docSnapshot in value.docs) {
-        print('${docSnapshot.id} => ${docSnapshot.data()}');
-      }
+      // for (var docSnapshot in value.docs) {
+      //   print('${docSnapshot.id} => ${docSnapshot.data()}');
+      // }
     }, onError: (e) => print("Error completing: $e"));
   }
 
@@ -40,7 +41,6 @@ class _RecordsScreenState extends State<RecordsScreen> {
               return getAllCollection();
             },
           ),
-
           Obx(
             () => Row(
               children: [
@@ -76,21 +76,30 @@ class _RecordsScreenState extends State<RecordsScreen> {
                 for (var docSnapshot in documents!)
                   DataRow(cells: [
                     DataCell(Text(docSnapshot.id)),
-                    DataCell(Text('${docSnapshot.data()}')),
+                    DataCell(Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        ElevatedButton.icon(
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) {
+                                  return const TestingScreen();
+                                },
+                              ));
+                            },
+                            icon: const Icon(Icons.edit),
+                            label: const Text('Details')),
+                        Container(width: 25),
+                        ElevatedButton.icon(
+                            onPressed: () {},
+                            icon: const Icon(Icons.delete),
+                            label: const Text('Delete')),
+                      ],
+                    )),
                   ]),
             ]),
           )
-
-          // Expanded(
-          //     child: ListView(
-          //   children: [
-
-          //     // if (!Responsive.isMobile(context))
-          //     //   TestResultInfoSectionLarge()
-          //     // else
-          //     //   const TestResultInfoSectionSmall(),
-          //   ],
-          // )),
         ],
       ),
     );

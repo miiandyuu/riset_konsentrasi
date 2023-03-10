@@ -3,28 +3,25 @@ import 'package:flutter/material.dart';
 import 'package:riset_konsentrasi/constants/style.dart';
 import 'package:riset_konsentrasi/pages/overview/widgets/scatter_chart.dart';
 import 'package:riset_konsentrasi/pages/overview/widgets/test_result_info.dart';
+import 'package:riset_konsentrasi/pages/testing/widgets/test_chart.dart';
 import 'package:riset_konsentrasi/widgets/custom_text.dart';
 
 class TestResultInfoSectionLarge extends StatelessWidget {
   TestResultInfoSectionLarge({super.key});
 
+//TODO: change collection name dynamically
   final CollectionReference firestoreInstance =
-      FirebaseFirestore.instance.collection('Ricky Aston');
+      FirebaseFirestore.instance.collection('userTest');
 
   loadData() async {
-    // await firestoreInstance.doc('Gambar1').get().then((value) {
-    //   String x = value['1']['x'];
-    //   String y = value['1']['y'];
-    //   // return x;
-    // });
     for (var i = 1;
         i < (await firestoreInstance.count().get()).count + 1;
         i++) {
       await firestoreInstance.doc('Gambar$i').get().then((value) {
         String x = value['$i']['x'];
-        // String y = value['1']['y'];
+        String y = value['$i']['y'];
         // print(x);
-        return x;
+        return {x, y};
       });
     }
   }
@@ -68,9 +65,10 @@ class TestResultInfoSectionLarge extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Row(
-                children: const [
-                  TestResultInfo(title: "Nama User", amount: "Reva"),
-                  TestResultInfo(title: "Nama Penguji", amount: "Reva"),
+                children: [
+                  TestResultInfo(
+                      title: "Nama User", amount: "${firestoreInstance.id}"),
+                  const TestResultInfo(title: "Nama Penguji", amount: "Reva"),
                 ],
               ),
               const SizedBox(
@@ -79,7 +77,7 @@ class TestResultInfoSectionLarge extends StatelessWidget {
               Row(
                 children: const [
                   TestResultInfo(
-                      title: "Tanggal Pengujian", amount: "26/12/2022"),
+                      title: "Tanggal Pengujian", amount: "10/3/2023"),
                   // TestResultInfo(title: "Last 7 days", amount: "150"),
                 ],
               ),

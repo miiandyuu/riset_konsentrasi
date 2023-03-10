@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-// import 'package:riset_konsentrasi/pages/test/widgets/test_table.dart';
 
 import '../../constants/controllers.dart';
 import '../../helpers/responsive_screen.dart';
 import '../../widgets/custom_text.dart';
 import '../overview/widgets/test_result_info_section_large.dart';
-import '../overview/widgets/test_result_info_section_small.dart';
+// import '../overview/widgets/test_result_info_section_small.dart';
 
-class TestScreen extends StatelessWidget {
-  const TestScreen({super.key});
+class TestingScreen extends StatelessWidget {
+  const TestingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,10 +31,10 @@ class TestScreen extends StatelessWidget {
         Expanded(
             child: ListView(
           children: [
-            if (!Responsive.isMobile(context))
+            // if (!Responsive.isMobile(context))
               TestResultInfoSectionLarge()
-            else
-              const TestResultInfoSectionSmall(),
+            // else
+              // const TestResultInfoSectionSmall(),
           ],
         )),
       ],

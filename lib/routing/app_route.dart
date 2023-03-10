@@ -5,7 +5,7 @@ import 'package:riset_konsentrasi/pages/records/records_screen.dart';
 
 import '../pages/authetication/login/login_screen.dart';
 import '../pages/authetication/signup/signup_screen.dart';
-import '../pages/test/test_screen.dart';
+import '../pages/testing/testing_screen.dart';
 import 'app_route_name.dart';
 
 class AppRoute {
@@ -23,12 +23,15 @@ class AppRoute {
       case AppRouteName.overviewPageRoute:
         return MaterialPageRoute(
             builder: (context) => const OverviewScreen(), settings: settings);
+       case AppRouteName.testPageDisplayName:
+        return MaterialPageRoute(
+            builder: (context) => const TestingScreen(), settings: settings);
       case AppRouteName.recordsPageRoute:
         return MaterialPageRoute(
             builder: (context) => const RecordsScreen(), settings: settings);
-      case AppRouteName.testPageDisplayName:
+      case AppRouteName.ujiCobaPageDisplayName:
         return MaterialPageRoute(
-            builder: (context) => const TestScreen(), settings: settings);
+            builder: (context) => const TestingScreen(), settings: settings);
     }
     return null;
   }

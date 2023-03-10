@@ -29,6 +29,8 @@ class MenuController extends GetxController {
         return _customIcon(Icons.receipt_long, itemName);
       case AppRouteName.recordsPageDisplayName:
         return _customIcon(Icons.science, itemName);
+      case AppRouteName.ujiCobaPageDisplayName:
+        return _customIcon(Icons.child_care, itemName);
       case AppRouteName.logoutPageDisplayName:
         return _customIcon(Icons.exit_to_app, itemName);
       default:
